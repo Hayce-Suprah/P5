@@ -1,0 +1,25 @@
+#Item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card{
+    width: 500px;
+}
+.panier{
+    margin-left: 40px;
+    background-color: grey;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+    padding-bottom: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.panier:hover{
+    color: white;
+    background-color: rgba(112, 112, 112, 0.644);
+}

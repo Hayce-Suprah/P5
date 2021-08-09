@@ -1,0 +1,133 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: 70px;
+  width: 100%;
+  background-color: gray;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-control-next {
+  background-color: black;
+}
+
+.carousel-control-prev {
+  background-color: black;
+}
+
+.ourson {
+  height: 300px;
+  width: 20%;
+}
+
+.logo {
+  height: 70px;
+}
+
+.menu {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+#itemList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 400px;
+  height: auto;
+  margin: 20px;
+}
+
+footer {
+  height: 70px;
+  width: auto;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.mentions {
+  width: 20%;
+  text-align: center;
+}
+
+.icons {
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+}
+
+.icons i {
+  padding: 20px;
+}
+
+.contact {
+  width: 20%;
+  text-align: center;
+}
+
+#Item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+}
+
+.panier {
+  margin-left: 40px;
+  background-color: grey;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 5px;
+  color: white;
+  padding-bottom: 12px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.panier:hover {
+  color: white;
+  background-color: rgba(112, 112, 112, 0.644);
+}
+
+.text {
+  text-align: center;
+}
+
+#form_container {
+  text-align: center;
+}
+
+#total {
+  text-align: center;
+}
+
+.confirmation {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */
