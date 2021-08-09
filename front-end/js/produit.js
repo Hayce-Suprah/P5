@@ -17,32 +17,38 @@ console.log(id);
 function setEvent(article) {
     // Ecouter le bouton et envoyer le panier
     btnAjouter.addEventListener('click', (evenement) =>{
-
+        
         //Permet a la page de ne pas se rafraichir quand on clique sur le bouton
         evenement.preventDefault();
 
         // Récupération storage
         const storage = localStorage.getItem('produits');
 
+    
+        // Quelle couleursa  étée séléctionnée
+        const color = document.getElementById("selectForm").value;
+
+        // Modication de l'objet article
+        article.color = color;
+        delete article.colors;
+        console.log(article)
+
         // Si existe pas 
         if (storage === null) {
             const newStorage = [];
-            newStorage.push(article)
-            localStorage.setItem('produits', JSON.stringify(newStorage))
-        } else { // Si existe
+            newStorage.push(article);
+            localStorage.setItem('produits', JSON.stringify(newStorage));
+        }else{// si il existe
             let storageParse = JSON.parse(storage);
-            // Vérifier que le produit n'est pas déjà dedant
-            const idExist = storageParse.find((element) => element._id === article._id) // (true ou false)
-            
-            if (!idExist) { // Si id pas présent dans le tableau
+            // Véfifier qu'il n'y a pas deux fois le même produits avec la même couleurs
+            const produitsExiste = storageParse.find((element) => element._id === article._id && element.color === article.color);
+            if (!produitsExiste) { // Si article pas présent dans le tableau
                 storageParse.push(article)
                 localStorage.setItem('produits', JSON.stringify(storageParse));
-            } else { // Si id déja présent
+            } else { // Si article déja présent
                 alert('Deja present');
             }
         }
-
-        console.log(storage);
 
     });
 }

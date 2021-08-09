@@ -15,6 +15,7 @@ tableau.innerHTML = `
     return `<tr>
             <td><img height="100" src="${article.imageUrl}"></td>
             <td>${article.name}</td>
+            <td>${article.color}</td>
             <td>${article.price / 100}€</td>
             <td><button class="btn btn-danger" id="btnsupp">Supprimer</button></td>
         </tr>`
