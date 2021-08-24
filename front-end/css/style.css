@@ -82,6 +82,53 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .ourson {
+    height: 300px;
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .mentions {
+    text-align: center;
+  }
+
+  .icons {
+    text-align: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .ourson {
+    height: 200px;
+    width: auto;
+  }
+}
+@media (max-width: 420px) {
+  footer {
+    height: 150px;
+    width: auto;
+    background-color: gray;
+    display: block;
+  }
+
+  .mentions {
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .icons {
+    padding: 0;
+    width: 100%;
+  }
+
+  .contact {
+    width: 100%;
+  }
+}
 #Item {
   display: flex;
   justify-content: center;
@@ -121,6 +168,19 @@ footer {
   text-align: center;
 }
 
+.table {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
 .confirmation {
   text-align: center;
   margin-top: 30px;

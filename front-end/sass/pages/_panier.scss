@@ -1,10 +1,27 @@
-.text{
-    text-align: center;
+.text {
+  text-align: center;
 }
 
-#form_container{
-    text-align: center;
+#form_container {
+  text-align: center;
 }
-#total{
-    text-align: center;
+#total {
+  text-align: center;
+}
+.table{
+  width: 100%;
+}
+
+
+@media (max-width: 500px){
+  .container{
+    width: 100%;
+  }
+  .form{
+    width: 100%;
+  }
+  // .table{
+  //   display: block;
+  //   width: auto;
+  // }
 }
