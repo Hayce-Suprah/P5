@@ -85,13 +85,15 @@ form.addEventListener("submit", (evenement) => {
     const ids = getLocal.map((item) => {
       return item._id;
     });
+    
     let contact = new Contact (username.value, name.value, adresse.value, ville.value, email.value);
+    console.log(contact)
     // Déclaration du body pour POST fetch
     const body = {
       contact, 
       products: ids,
     };
-
+    console.log(body);
     const init = {
       method: "POST",
       headers: {
@@ -122,36 +124,3 @@ form.addEventListener("submit", (evenement) => {
   }
 });
 
-function checkInputs() {
-  const usernameValue = username.value.trim();
-  const nameValue = name.value.trim();
-  const adresseValue = adresse.value.trim();
-  const villeValue = ville.value.trim();
-  const emailValue = email.value.trim();
-
-  if (!validationText(usernameValue, nameValue, villeValue, adresseValue)) {
-    alert("Votre Prénom, Nom, ville ou adresse n'est pas valide");
-  }
-  if (!validationEmail(emailValue)) {
-    alert("Email incorrect");
-  }
-
-  if (
-    validationText(usernameValue) &&
-    validationText(nameValue) &&
-    validationText(villeValue) &&
-    validationText(adresseValue) &&
-    validationEmail(emailValue)
-  ) {
-    return true;
-  }
-}
-
-function validationEmail(email) {
-  return /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/.test(
-    email
-  );
-}
-function validationText(text) {
-  return /^[a-zA-Z0-9\-\s]{2,}$/.test(text);
-}

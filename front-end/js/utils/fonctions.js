@@ -25,6 +25,8 @@ function affichageArticles(articles){
 
 // Produits.js
 
+// function setEvent, permet d'ajouter l'article au panier et vérifier si l'article est déjà présent ou si la couleur est déjà présente
+
 
 function setEvent(article) {
     // Ecouter le bouton et envoyer le panier
@@ -65,7 +67,7 @@ function setEvent(article) {
     });
 }
 
-// fonction qui affiche l'article
+// fonction affichageArticle, fonction qui affiche l'article grâce a son ID
 
 function affichageArticle(article) {
     Item.innerHTML = `
@@ -85,6 +87,8 @@ function affichageArticle(article) {
 
 
 // Panier.js
+
+// function checkInputs, fonction qui permet de vérifier les RegExp mis en place dans les fonctions validationEmail et validationText pour un bon envoi du formulaire.
 
 
 function checkInputs() {
@@ -110,5 +114,5 @@ function validationEmail(email) {
     return /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/.test(email)
 };
 function validationText(text) {
-    return /^[a-zA-Z0-9\-\s]{2,}$/.test(text)
+    return /^[a-zA-Z0-9ÀÁÂÃÄÅÇÑñÇçÈÉÊËÌÍÎÏÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöøùúûüýÿ\-\s]{2,}$/.test(text)
 };
