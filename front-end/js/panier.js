@@ -1,7 +1,11 @@
+
+
+
 // Récupération du local Storage
 
 const getLocalStorage = localStorage.getItem("produits");
 let panier = JSON.parse(getLocalStorage);
+console.log(panier)
 
 // Déclaration de ma variable ou se trouvera mon tableau
 
@@ -16,8 +20,8 @@ tableau.innerHTML = `
             <td>${article.color}</td>
             <td>${article.price / 100}€</td>
             <td><button class="btn btn-danger" id="btnsupp">Supprimer</button></td>
-        </tr>`;
-    })}
+          </tr>`;
+    }).join('')}
 `;
 // Déclaration de ma variable pour cibler les boutons + boucle for of de mon bouton dans mes boutons avec compteur (index) + évenement sur les btn
 // avec la fonction .splice pour vider une partie du tableau, ensuite renvoi du localStorage en .JSON et raffraichissement de la page avec.reload
@@ -27,8 +31,14 @@ const btns = document.querySelectorAll("#btnsupp");
 for (const [index, btn] of btns.entries()) {
   btn.addEventListener("click", () => {
     panier.splice(index, 1);
-    localStorage.setItem("produits", JSON.stringify(panier));
-    window.location.reload();
+
+    if(panier.length === 0){
+      localStorage.removeItem("produits");
+    }else{
+      localStorage.setItem("produits", JSON.stringify(panier));
+    }
+
+  window.location.reload();
   });
 }
 
@@ -64,6 +74,10 @@ Total.innerHTML = `
 // Séléction du bouton sur lequel ce passera mon evenement
 
 const form = document.getElementById("form_container");
+if(panier !== undefined && panier.length>0){
+  form.style.display = "block";
+}
+
 const username = document.getElementById("prenom");
 const name = document.getElementById("nom");
 const adresse = document.getElementById("adresse");

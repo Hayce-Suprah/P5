@@ -9,6 +9,19 @@ body {
   background-color: gray;
   text-align: center;
   margin-bottom: 50px;
+  position: relative;
+}
+
+.container i {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  font-size: 30px;
+  color: white;
+}
+
+.container i:hover {
+  color: black;
 }
 
 .carousel-item {
@@ -75,6 +88,11 @@ footer {
 
 .icons i {
   padding: 20px;
+  color: black;
+}
+
+.icons i:hover {
+  color: blue;
 }
 
 .contact {

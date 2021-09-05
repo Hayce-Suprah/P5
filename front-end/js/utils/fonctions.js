@@ -46,19 +46,21 @@ function setEvent(article) {
         article.color = color;
         delete article.colors;
         console.log(article)
-
         // Si existe pas 
         if (storage === null) {
             const newStorage = [];
             newStorage.push(article);
             localStorage.setItem('produits', JSON.stringify(newStorage));
+            alert("Article ajouter au panier");
         }else{// si il existe
             let storageParse = JSON.parse(storage);
-            // Véfifier qu'il n'y a pas deux fois le même produits avec la même couleurs
-            const produitsExiste = storageParse.find((element) => element._id === article._id && element.color === article.color);
-            if (!produitsExiste) { // Si article pas présent dans le tableau
+            
+            //Véfifier qu'il n'y a pas deux fois le même produits avec la même couleurs
+            const produitsExiste = storageParse.find((element) => element._id === article._id);
+            if (produitsExiste) { // Si article pas présent dans le tableau
                 storageParse.push(article)
                 localStorage.setItem('produits', JSON.stringify(storageParse));
+                alert("Article ajouter au panier");
             } else { // Si article déja présent
                 alert('Deja present');
             }
